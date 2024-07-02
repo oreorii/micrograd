@@ -1,7 +1,37 @@
 
-# micrograd
+# My Learning Notes
+    
+- **Building Blocks of Neural Networks**: By working with Micrograd, users can gain insights into the fundamental building blocks of neural networks, including forward and backward passes.
+    - **Forward Pass**
+        
+        The forward pass refers to the process of feeding input data through the network to obtain the output (predictions). This step involves calculating the activations of each layer sequentially, starting from the input layer and moving through to the output layer. 
+        
+    - **Backward pass**
+        
+        The backward pass, or backpropagation, is the process of updating the network's weights and biases based on the loss function's gradients. This step involves calculating the gradients of the loss with respect to each weight and bias in the network and using these gradients to update the parameters.
 
-![awww](puppy.jpg)
+    - **What is gradient decent:**
+
+    Gradient descent is an optimization algorithm used to minimize the loss function in machine learning models, including neural networks. It iteratively adjusts the model's parameters (weights and biases) to reduce the difference between the predicted output and the actual output.
+
+### Gradient Descent in Neural Networks
+
+In neural networks, the gradient descent algorithm involves the following steps:
+
+1. **Forward Pass**: Compute the output of the network by passing the input data through each layer.
+2. **Compute Loss**: Calculate the loss using a loss function (e.g., mean squared error, cross-entropy).
+3. **Backward Pass**: Compute the gradients of the loss with respect to each parameter using backpropagation.
+4. **Parameter Update**: Update the parameters using the gradient descent update rule.
+
+### Activation Functions:
+- Tanh: smoother, more complicatated, hence, stressed more on the gradient
+- Softmax: it converts the scores to a normalized probability distribution, which can be displayed to a user or used as input to other systems. For this reason it is usual to append a softmax function as the final layer of the neural network.
+- Relu
+
+### Interesting point: 
+- learned the most NN mistakes: forgot to .zero_grad() before .backward() in pytorch
+
+# From Andrej
 
 A tiny Autograd engine (with a bite! :)). Implements backpropagation (reverse-mode autodiff) over a dynamically built DAG and a small neural networks library on top of it with a PyTorch-like API. Both are tiny, with about 100 and 50 lines of code respectively. The DAG only operates over scalar values, so e.g. we chop up each neuron into all of its individual tiny adds and multiplies. However, this is enough to build up entire deep neural nets doing binary classification, as the demo notebook shows. Potentially useful for educational purposes.
 
